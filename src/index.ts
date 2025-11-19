@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import crypto from 'crypto';
+import { randomUUID } from 'crypto';
 
 const app = new Hono()
 const tasks: any[] = [];
@@ -15,7 +15,7 @@ app.get('/tasks', async (c) => {
 app.post('/tasks', async (c) => {
   const task = await c.req.json();
   const newTask = {
-    id: crypto.randomUUID(),
+    id: randomUUID(),
     title: task.title,
     completed: false,
   };
