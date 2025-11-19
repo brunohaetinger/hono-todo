@@ -1,16 +1,19 @@
+import { TaskId } from "./value-objects/task-id.vt";
+import { TaskTitle } from "./value-objects/task-title.vt";
+
 export class Task {
   constructor(
-    private readonly id: string,
-    private title: TaskTitle,
-    private completed: boolean = false,
-  ){}
+    public readonly id: TaskId,
+    public title: TaskTitle,
+    public completed: boolean = false,
+  ) { }
 
   complete(): void {
     this.completed = true;
   }
 
   rename(newTitle: TaskTitle): void {
-    this.title = title;
+    this.title = newTitle;
   }
 
   toJSON() {

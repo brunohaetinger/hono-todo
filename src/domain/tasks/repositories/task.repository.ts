@@ -1,3 +1,6 @@
+import { Task } from "../entities/task.entity";
+import { TaskId } from "../entities/value-objects/task-id.vt";
+
 export interface TaskRepository {
   save(task: Task): Promise<void>;
   delete(id: TaskId): Promise<void>;
