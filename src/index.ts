@@ -41,4 +41,13 @@ app.put('/tasks/:id', async (c) => {
   return c.text("Task modified", {status: 200});
 })
 
+app.delete('/tasks/:id', (c) => {
+  const id = c.req.param("id");
+  const taskIndex = tasks.findIndex(t => t.id === id);
+  if(!taskIndex){
+    return c.json({message: 'Task not found'}, {status: 404})
+  }
+  return c.json(tasks.splice(taskIndex, 1));
+})
+
 export default app
