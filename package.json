@@ -4,6 +4,9 @@
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "drizzle-kit": "^0.31.7",
+    "drizzle-orm": "^0.44.7",
     "hono": "^4.10.6"
   },
   "devDependencies": {
