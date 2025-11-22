@@ -1,5 +1,5 @@
 import { TaskRepository } from "../../../domain/tasks/repositories/task.repository";
-import { db } from '../../db/client';
+import { db } from '../../db';
 import { tasks } from '../../adapters/data/sqlite/schema'
 import { TaskId } from "../../../domain/tasks/entities/value-objects/task-id.vt";
 import { TaskTitle } from "../../../domain/tasks/entities/value-objects/task-title.vt";
