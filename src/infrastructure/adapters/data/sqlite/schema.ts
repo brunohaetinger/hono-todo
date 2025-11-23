@@ -4,5 +4,6 @@ export const tasks = sqliteTable("tasks", {
   id: integer("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
   description: text("description"),
+  completed: integer("completed", { mode: 'boolean' }),
   createdAT: integer("created_at").notNull(),
 })

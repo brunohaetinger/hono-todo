@@ -24,7 +24,7 @@ export class TaskRepositoryImpl implements TaskRepository {
     return rows.map((r) => new Task(
       new TaskId(r.id),
       new TaskTitle(r.title),
-      r.completed
+      Boolean(r.completed)
     ))
   }
 }
