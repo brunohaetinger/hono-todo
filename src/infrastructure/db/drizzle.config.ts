@@ -5,7 +5,7 @@ export default defineConfig({
   schema: "./src/infrastructure/adapters/data/sqlite/schema.ts",
   out: "./drizzle",
   driver: "durable-sqlite",
-  dbCredentials: {
-    url: "./data/database.sqlite",
-  }
+  // dbCredentials: {
+  //   url: "./data/database.sqlite",
+  // }
 });

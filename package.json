@@ -1,7 +1,7 @@
 {
   "name": "hono-todo",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
     "drizzle-generate": "bun run drizzle-kit generate --config=./src/infrastructure/db/drizzle.config.ts"
   },
   "dependencies": {
@@ -11,6 +11,7 @@
     "hono": "^4.10.6"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/bun": "latest"
   }
 }
