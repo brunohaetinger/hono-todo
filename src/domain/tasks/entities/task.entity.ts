@@ -8,6 +8,10 @@ export class Task {
     public completed: boolean = false,
   ) { }
 
+  static create(title: TaskTitle) {
+    return new Task(TaskId.create(), title, false);
+  }
+
   complete(): void {
     this.completed = true;
   }

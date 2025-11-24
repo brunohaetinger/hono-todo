@@ -8,6 +8,7 @@ import { Task } from "../../../domain/tasks/entities/task.entity";
 export class TaskRepositoryImpl implements TaskRepository {
   async save(task: Task): Promise<void> {
     const row = await db.insert(tasks).values({
+      id: task.id.value,
       title: task.title.value,
       createdAt: new Date().getTime(),
       // createdAt: task.createdAt.getTime(),
