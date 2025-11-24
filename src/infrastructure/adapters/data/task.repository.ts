@@ -6,8 +6,13 @@ import { TaskTitle } from "../../../domain/tasks/entities/value-objects/task-tit
 import { Task } from "../../../domain/tasks/entities/task.entity";
 
 export class TaskRepositoryImpl implements TaskRepository {
-  save(task: Task): Promise<void> {
-    throw new Error("Method not implemented.");
+  async save(task: Task): Promise<void> {
+    const row = await db.insert(tasks).values({
+      title: task.title.value,
+      createdAt: new Date().getTime(),
+      // createdAt: task.createdAt.getTime(),
+    }).returning();
+    return;
   }
   delete(id: TaskId): Promise<void> {
     throw new Error("Method not implemented.");
