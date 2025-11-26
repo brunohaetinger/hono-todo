@@ -1,10 +1,9 @@
 import { Hono } from 'hono'
-import { randomUUID } from 'crypto';
 import { taskController } from './infrastructure/adapters/presentation/task.controller';
 
 const app = new Hono()
 
-app.route("/tasks", taskController);
+app.route('/tasks', taskController);
 
 app.get('/', (c) => {
   return c.text('To-Do API')
