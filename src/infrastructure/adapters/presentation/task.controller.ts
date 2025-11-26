@@ -24,3 +24,4 @@ taskController.get('/', async (c) => {
   const tasks = await taskRepo.findAll();
   c.json(tasks);
 })
+
