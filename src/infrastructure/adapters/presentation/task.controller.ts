@@ -21,7 +21,9 @@ taskController.post('/', async (c) => {
 
 taskController.get('/', async (c) => {
   // TODO: create Get All tasks use case
+  console.log('/tasks GET')
   const tasks = await taskRepo.findAll();
-  c.json(tasks);
+  return c.json(tasks);
 })
 
+export default taskController;
