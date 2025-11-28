@@ -22,6 +22,15 @@ export class TaskRepositoryImpl implements TaskRepository {
   }
 
   async findAll(): Promise<Task[]> {
-    return [];
+    const rows = await db.select().from(tasks);
+
+    return rows.map(
+      row =>
+        new Task(
+          new TaskId(row.id),
+          new TaskTitle(row.title),
+          Boolean(row.completed)
+        )
+    );
   }
 }
