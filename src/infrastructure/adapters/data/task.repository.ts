@@ -1,6 +1,10 @@
+import { eq } from "drizzle-orm";
 import { Task } from "../../../domain/tasks/entities/task.entity";
 import { TaskId } from "../../../domain/tasks/entities/value-objects/task-id.vt";
+import { TaskTitle } from "../../../domain/tasks/entities/value-objects/task-title.vt";
 import { TaskRepository } from "../../../domain/tasks/repositories/task.repository";
+import { db } from "../../db";
+import { tasks } from "./sqlite/schema";
 
 export class TaskRepositoryImpl implements TaskRepository {
   async save(task: Task): Promise<void> {
