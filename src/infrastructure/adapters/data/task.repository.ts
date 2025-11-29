@@ -21,8 +21,14 @@ export class TaskRepositoryImpl implements TaskRepository {
   update(task: Task): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  findById(id: TaskId): Promise<Task | null> {
-    throw new Error("Method not implemented.");
+  async findById(id: TaskId): Promise<Task | null> {
+    const row = await db.query.tasks.findFirst({ with: { id: id.value } })
+    if (!row) return null;
+    return new Task(
+      row.id,
+      new TaskTitle(row.title),
+      Boolean(row.completed)
+    )
   }
 
   async findAll(): Promise<Task[]> {
