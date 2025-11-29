@@ -16,7 +16,7 @@ export class TaskRepositoryImpl implements TaskRepository {
     });
   }
   delete(id: TaskId): Promise<void> {
-    throw new Error("Method not implemented.");
+    return db.delete(tasks).where(eq(tasks.id, id.value));
   }
   update(task: Task): Promise<void> {
     throw new Error("Method not implemented.");
